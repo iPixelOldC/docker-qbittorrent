@@ -6,4 +6,4 @@ WEBUI_PORT=${WEBUI_PORT:-8080}
 umask "$UMASK_SET"
 
 exec \
-	s6-setuidgid abc /usr/bin/qbittorrent-nox --webui-port="${WEBUI_PORT}"
+	s6-setuidgid abc /usr/bin/qbittorrent-enhanced-nox --webui-port="${WEBUI_PORT}"
