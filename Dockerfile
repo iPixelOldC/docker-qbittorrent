@@ -28,13 +28,13 @@ RUN \
  echo "**** install packages ****" && \
  if [ -z ${QBITTORRENT_VERSION+x} ]; then \
 	QBITTORRENT_VERSION=$(curl -sX GET http://ppa.launchpad.net/poplite/qbittorrent-enhanced/ubuntu/dists/bionic/main/binary-amd64/Packages.gz | gunzip -c \
-	|grep -A 7 -m 1 "Package: qbittorrent-nox" | awk -F ": " '/Version/{print $2;exit}');\
+	|grep -A 7 -m 1 "Package: qbittorrent-enhanced-nox" | awk -F ": " '/Version/{print $2;exit}');\
  fi && \
  apt-get update && \
  apt-get install -y \
 	p7zip-full \
 	qbittorrent-cli \
-	qbittorrent-nox=${QBITTORRENT_VERSION} \
+	qbittorrent-enhanced-nox=${QBITTORRENT_VERSION} \
 	unrar \
 	geoip-bin \
 	unzip && \
